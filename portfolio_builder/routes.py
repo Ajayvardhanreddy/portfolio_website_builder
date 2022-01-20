@@ -49,13 +49,14 @@ def dashboard():
             session.pop('update_email_exists', None)
         return render_template("dashboard.html", users_details=users_details, portfolio_details=portfolio_details, updated_account=updated_account, updated_password=updated_password, updated_username_exists=updated_username_exists, updated_email_exists=updated_email_exists)
     else:
+        session['dashboard_route'] = 'True'
         return redirect(url_for('login'))
 
 
 @app.route('/login')
 def login():
     if session.get('username'):
-        return 'already logged in, logout first'
+        return redirect(url_for('home'))
     return render_template('login.html')
 
 
@@ -72,6 +73,9 @@ def verify_login():
                     template_id = session['template_id']
                     session.pop('template_id', None)
                     return redirect(url_for('use_template', template_id=template_id))
+                if session.get('dashboard_route'):
+                    session.pop('dashboard_route', None)
+                    return redirect(url_for('dashboard'))
                 session['logged_in'] = 1
                 return redirect(url_for('home'))
             else:

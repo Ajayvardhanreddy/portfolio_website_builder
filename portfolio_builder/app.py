@@ -1,14 +1,17 @@
 from flask import Flask
+from flask_wtf.csrf import CSRFProtect
 from flask_pymongo import PyMongo
 import string
 import secrets
 import os
 
 app = Flask(__name__)
+csrf = CSRFProtect(app)
 
 app.secret_key = ''.join(secrets.choice(string.ascii_uppercase + string.digits)for i in range(28))
 
-app.config['MONGO_URI'] = os.environ["DATABASE_URI"]
+# app.config['MONGO_URI'] = os.environ["DATABASE_URI"]
+app.config['MONGO_URI'] = "mongodb+srv://ajayvardhanreddy:ajayvardhan@learnmongo.dba5m.mongodb.net/portfolio?retryWrites=true&w=majority"
 
 
 mongo = PyMongo(app)
