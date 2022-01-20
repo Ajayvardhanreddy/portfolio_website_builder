@@ -1,12 +1,12 @@
 from flask import Flask
-from flask_wtf.csrf import CSRFProtect
+# from flask_wtf.csrf import CSRFProtect
 from flask_pymongo import PyMongo
 import string
 import secrets
 import os
 
 app = Flask(__name__)
-csrf = CSRFProtect(app)
+# csrf = CSRFProtect(app)
 
 app.secret_key = ''.join(secrets.choice(string.ascii_uppercase + string.digits)for i in range(28))
 
