@@ -754,6 +754,20 @@ object-fit: cover;
     }
 
 }
+
+ @media only screen and (min-width: 500px) and (max-width: 600px) {
+     .weather-card {
+        width:100%;
+        height:250px;
+    }
+    .weather-card .top{
+        height: 180px;
+    }
+    .weather-card .bottom .wrapper {
+        padding-left: 100px;
+    }
+
+}
   .template-header{
          margin-top:20px;
          text-align:center;
