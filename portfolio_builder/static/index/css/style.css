@@ -740,7 +740,7 @@ object-fit: cover;
         height: 180px;
     }
    .weather-card .bottom .wrapper { 
-      padding-left: 80px; 
+      padding-left: 60px; 
    }
 
 }
