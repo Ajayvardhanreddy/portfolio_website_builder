@@ -739,6 +739,9 @@ object-fit: cover;
     .weather-card .top{
         height: 180px;
     }
+   .weather-card .bottom .wrapper { 
+      padding-left: 80px; 
+   }
 
 }
  @media only screen and (min-width: 400px) and (max-width: 500px) {
