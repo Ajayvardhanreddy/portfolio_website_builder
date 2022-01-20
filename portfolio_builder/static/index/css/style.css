@@ -875,4 +875,10 @@ box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
  .container-skills{
    width:90%;
    }
+.skill_item{ 
+    border-radius: 3px;
+    margin: 0 5px 5px; 
+    padding: 15px; 
+    font-size: 13px; 
+   }
 }
